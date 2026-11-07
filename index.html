@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="#hero" class="logo">Portfolio.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+                <p class="subtitle">Computer Science Student & Aspiring Web Developer</p>
+                <p class="bio-snippet">I build clean, accessible, and user-friendly web applications using modern HTML, CSS, and JavaScript.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="#contact" class="btn secondary">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am a passionate student currently focused on web development and software engineering. I love turning complex problems into intuitive, clean, and responsive user interfaces.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharpening my problem-solving skills.</p>
+                </div>
+                <div class="about-details">
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li><strong>Education:</strong> B.Tech / B.Sc. in Computer Science</li>
+                        <li><strong>Location:</strong> Your City, Country</li>
+                        <li><strong>Interests:</strong> Web Design, UI/UX, Cloud Computing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript (ES6+), Responsive Design, Flexbox, CSS Grid</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Version Control</h3>
+                    <p>Git, GitHub, VS Code, Chrome DevTools, Command Line</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Core Concepts</h3>
+                    <p>Data Structures, Algorithms, Object-Oriented Programming, REST APIs</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <h3>E-Commerce Landing Page</h3>
+                    <p>A fully responsive product landing page built with semantic HTML and advanced CSS Flexbox layouts.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span><span>CSS3</span><span>Flexbox</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <h3>Interactive Weather App</h3>
+                    <p>A JavaScript-powered web app that fetches real-time weather data from a public API based on user search.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span><span>API Integration</span><span>CSS Grid</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <h3>Task Management Dashboard</h3>
+                    <p>A productivity dashboard allowing users to add, check off, and delete daily tasks with local storage persistence.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span><span>DOM Manipulation</span><span>LocalStorage</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="site-footer">
+        <h2>Let's Connect</h2>
+        <p>I'm currently looking for internship opportunities and collaborative projects. Feel free to reach out!</p>
+        <div class="social-links">
+            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        </div>
+        <p class="copyright">&copy; 2026 Your Name. Built with HTML5 & CSS3.</p>
+    </footer>
+
+    <!-- Interactive JavaScript Feature -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        // Check for saved user preference on load
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                themeToggleBtn.textContent = '☀️';
+            }
+        }
+
+        // Toggle theme function
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggleBtn.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggleBtn.textContent = '☀️';
+            }
+        });
+    </script>
+</body>
+</html>
